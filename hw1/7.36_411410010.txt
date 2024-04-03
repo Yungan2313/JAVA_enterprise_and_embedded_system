@@ -1,0 +1,58 @@
+411410010 周宥閔 資工二
+
+a.) 重複input 直到輸入0
+00 +1008        //READ: input(A)
+01 +2008        //LOAD: register = memory[A]
+02 +4206        //BRANCHZERO: if (register == 0)? goto 06
+03 +3009        //ADD: register += memory[B]
+04 +2109        //STORED: memory[B] = register
+05 +4000        //BRANCH: goto 00
+06 +1109        //WRITE: printf(B)
+08 +4300        //program stop
+07 +0000        //A #input
+08 +0000        //B #sum
+09 -99999       //stopped input
+
+b.)重複input 7次
+00 +1014        //READ: input(A)
+01 +2014        //LOAD: register = memory[A]
+02 +3015        //ADD: register += memory[B]
+03 +2115        //STORED: memory[B] = register
+04 +2016        //LOAD: register = memory[C]
+05 +3118        //SUBTRACT: register -= memory[E]
+06 +2116        //STORED: memory[C] = register
+07 +4209        //BRANCHZERO: if(register == 0)? goto 08 #while(C--){} => C==0? break 
+08 +4000        //BRANCH: goto 00 #loop
+09 +2015        //LOAD: register = memory[B]
+10 +3217        //DIVIDE: register /= memory[D]
+11 +2115        //STORED: memory[B] = register
+12 +1115        //WRITE: printf(B)
+13 +4300        //program stop
+14 +0000        //A #input
+15 +0000        //B #sum
+16 +0007        //C #count
+17 +0007        //D #devide number
+18 +0001        //E #for -1
+19 -99999       //stopped input
+
+
+c.)給定數量的值 找MAX 
+00 +1016        //READ: input(C)
+01 +1014        //READ: input(A)
+02 +2014        //LOAD: register = memory[A]
+03 +3115        //SUBTRACT: register -= memory[B]
+04 +4107        //BRANCHNEG: if(register < 0)? goto 07 #if A<B
+05 +2014        //LOAD: register = memory[A]
+06 +2115        //STORED: memory[B] = register
+07 +2016        //LOAD: register = memory[C]
+08 +3117        //SUBTRACT: register -= memory[D]
+09 +2116        //STORED: memory[C] = register
+10 +4212        //BRANCHZERO: if(register == 0)? goto 11 #while(C--){} => C==0? break 
+11 +4001        //BRANCH: goto 01
+12 +1115        //WRITE: printf(B)
+13 +4300        //program stop
+14 +0000        //A #input
+15 +0000        //B #max
+16 +0000        //C #times
+17 +0001        //D #for -1
+18 -99999       //stopped input 
